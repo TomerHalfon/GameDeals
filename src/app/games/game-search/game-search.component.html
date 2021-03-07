@@ -1,1 +1,4 @@
-<p>game-search works!</p>
+<form [formGroup]='form' (ngSubmit)='onInputUpdate()'>
+    <input formControlName ='text'>
+    <button>Search</button>
+</form>

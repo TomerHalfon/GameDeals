@@ -13,7 +13,6 @@ export class GamesListContainerComponent implements OnInit {
   constructor(private service:GamesService) { }
 
   ngOnInit(): void {
-    this.updateGamesList("call")
   }
 
   updateGamesList(text:string){

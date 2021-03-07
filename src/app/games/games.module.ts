@@ -5,6 +5,7 @@ import { GameContainerComponent } from './game-container/game-container.componen
 import { GamesRoutingModule } from './games-routing.module';
 import { GameListComponent } from './game-list/game-list.component';
 import { GameSearchComponent } from './game-search/game-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { GameSearchComponent } from './game-search/game-search.component';
   declarations: [GamesListContainerComponent, GameContainerComponent,GameListComponent,GameSearchComponent],
   imports: [
     CommonModule,
-    GamesRoutingModule
+    GamesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class GamesModule { }

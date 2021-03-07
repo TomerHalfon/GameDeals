@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-game-search',
@@ -9,10 +10,16 @@ export class GameSearchComponent implements OnInit {
   @Output()
   updatedGamesList:EventEmitter<string> = new EventEmitter()
 
-  constructor() { }
+  form:FormGroup
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({text:['call of duty',Validators.required]})
     
+  }
+  onInputUpdate(){
+    if(this.form.valid)
+      this.updatedGamesList.emit(this.form.value.text)
   }
   
 }
