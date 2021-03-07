@@ -1,1 +1,2 @@
-<p>games-list-container works!</p>
+<app-game-search (updatedGamesList)='updateGamesList($event)'></app-game-search>
+<app-game-list [games]='gamesList'></app-game-list>
