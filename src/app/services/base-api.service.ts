@@ -12,6 +12,6 @@ export class BaseApiService {
   constructor(private http: HttpClient) { }
 
   get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
-    return this.http.get(`${environment.api_url}/${path}/`, {params:params, headers: this.headers })
+    return this.http.get(`${environment.api_url}/${path}`, {params:params, headers: this.headers })
   }
 }
