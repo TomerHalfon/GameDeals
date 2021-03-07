@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-game-search',
@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./game-search.component.css']
 })
 export class GameSearchComponent implements OnInit {
-  @Input()
-  game:any
+  @Output()
+  updatedGamesList:EventEmitter<string> = new EventEmitter()
 
   constructor() { }
 
