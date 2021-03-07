@@ -14,7 +14,7 @@ export class GameSearchComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
-    this.form = this.fb.group({text:['call of duty',Validators.required]})
+    this.form = this.fb.group({text:['',Validators.required]})
     
   }
   onInputUpdate(){

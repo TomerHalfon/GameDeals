@@ -1,19 +1,9 @@
-<div *ngFor = 'let game of games'>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{game.gameID}}</h5>       
-          <h5 class="card-title">{{game.external}}</h5>          
-          <p class="card-text">cheapest: {{game.cheapest}}</p>          
-          <p class="card-text">steamApp ID: {{game.steamAppID}}</p>
-          <p class="card-text">cheapest Deal: {{game.cheapestDealID}}</p>
-          <a href="#" class="card-link" >Game Link: {{game.thumb}}</a>         
-        </div>
-      </div>
+<div class="d-flex flex-wrap">
+  <ng-content *ngIf='games?.length == 0'></ng-content>
+<div *ngFor = 'let game of games' class="card" style="width: 18rem;height: 20rem;" (click)='onGameClicked(game)'>
+  <img [src]='game.thumb' class="card-img-top" alt="..." style="height: 60%;">
+  <div class="card-body">
+    <h5 class="card-title">{{game.external}}</h5>
+  </div>
 </div>
-
-<!-- "gameID": "146",
-    "steamAppID": "35140",
-    "cheapest": "5.00",
-    "cheapestDealID": "n96QeQ9FLRDoZToO75BS2Dx22PPtc7hlpcehVxUlW2c%3D",
-    "external": "Batman: Arkham Asylum Game of the Year Edition",
-"thumb": "https://steamcdn-a.akamaihd.net/steam/apps/35140/capsule_sm_120.jpg?t=1525990900" -->
+</div>

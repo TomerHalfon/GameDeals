@@ -1,4 +1,8 @@
-<form [formGroup]='form' (ngSubmit)='onInputUpdate()'>
-    <input formControlName ='text'>
-    <button>Search</button>
+<div>
+<form [formGroup]='form' (ngSubmit)='onInputUpdate()' class="form-group">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search" aria-label="search-bar" aria-describedby="search-button" formControlName ='text'>
+        <button class="btn btn-outline-primary" id="search-button">Search</button>
+    </div>
 </form>
+</div>

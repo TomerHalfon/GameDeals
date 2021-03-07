@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GamesService } from 'src/app/services/games.service';
 import { Game } from '../Models/game.model';
 
@@ -8,11 +8,15 @@ import { Game } from '../Models/game.model';
   styleUrls: ['./games-list-container.component.css']
 })
 export class GamesListContainerComponent implements OnInit {
+  
+  @Input()
+  defaultSearch:string = "call of duty"
 
   gamesList:Game[]
   constructor(private service:GamesService) { }
 
   ngOnInit(): void {
+    this.updateGamesList(this.defaultSearch)
   }
 
   updateGamesList(text:string){
