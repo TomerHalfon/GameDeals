@@ -5,7 +5,7 @@ import { GamesListContainerComponent } from './games-list-container/games-list-c
 
 const routes: Routes = [
   { path: 'Games', component: GamesListContainerComponent },
-  { path: 'Games/:steamAppId', component: GameContainerComponent },
+  { path: 'Games/:gameId', component: GameContainerComponent },
 ];
 
 @NgModule({

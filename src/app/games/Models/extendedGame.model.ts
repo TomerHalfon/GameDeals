@@ -1,6 +1,7 @@
 import { Deal } from "./deal.model"
 
 export class ExtendedGame{
+    
     gameID: number
     title:string
     steamAppID: number

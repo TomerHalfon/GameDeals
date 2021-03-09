@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Store } from '../games/Models/store.model';
 import { BaseApiService } from './base-api.service';
 
 @Injectable({
@@ -6,7 +9,15 @@ import { BaseApiService } from './base-api.service';
 })
 export class StoresService {
 
-  constructor(private apiService:BaseApiService) { }
-  
-  //add get by indexer of a store
+  stores:Store[]
+  constructor(private apiService:BaseApiService) {
+   }
+  private async loadStores(){
+   this.stores = await this.apiService.get('stores').pipe(map(data=><Store[]>(data))).toPromise()
+  }
+  async getStore(storeId:number):Promise<Store>{
+    if(!this.stores)
+      await this.loadStores()
+    return this.stores[storeId - 1]
+    }
 }
