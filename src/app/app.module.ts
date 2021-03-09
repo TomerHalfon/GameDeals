@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { GamesModule } from './games/games.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DealsModule } from './deals/deals.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     GamesModule,
+    DealsModule,
     AppRoutingModule,
     HttpClientModule
   ],

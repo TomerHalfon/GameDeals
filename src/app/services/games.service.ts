@@ -22,7 +22,8 @@ export class GamesService {
   }
   getGame(gameId: number): Observable<ExtendedGame> {
     let params = { id: gameId.toString() }
-    return this.apiService.get('games', new HttpParams({ fromObject: params })).pipe(mergeMap(async data=> await this.convertExtGame(data,gameId)))
+    return this.apiService.get('games', new HttpParams({ fromObject: params }))
+    .pipe(mergeMap(async data=> await this.convertExtGame(data,gameId)))
   }
   private async convertDeals(deals: any[]): Promise<Deal[]> {
     const res: Deal[] = []

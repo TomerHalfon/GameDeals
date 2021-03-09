@@ -6,11 +6,13 @@ import { GamesRoutingModule } from './games-routing.module';
 import { GameListComponent } from './game-list/game-list.component';
 import { GameSearchComponent } from './game-search/game-search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GameDisplayComponent } from './game-display/game-display.component';
+import { GameDealsComponent } from './game-deals/game-deals.component';
 
 
 
 @NgModule({
-  declarations: [GamesListContainerComponent, GameContainerComponent,GameListComponent,GameSearchComponent],
+  declarations: [GamesListContainerComponent, GameContainerComponent,GameListComponent,GameSearchComponent, GameDisplayComponent, GameDealsComponent],
   imports: [
     CommonModule,
     GamesRoutingModule,

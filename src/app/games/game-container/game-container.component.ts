@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { GamesService } from 'src/app/services/games.service';
 import { ExtendedGame } from '../Models/extendedGame.model';
 
@@ -11,7 +11,7 @@ import { ExtendedGame } from '../Models/extendedGame.model';
 export class GameContainerComponent implements OnInit {
 
   game:ExtendedGame
-  constructor(private gamesService:GamesService, private route:ActivatedRoute) { }
+  constructor(private gamesService:GamesService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params:ParamMap)=>{
@@ -21,5 +21,8 @@ export class GameContainerComponent implements OnInit {
   }
 log(){
   console.log(this.game)
+}
+goToDeal(dealID:string){
+  this.router.navigate(['/Deals',dealID])
 }
 }

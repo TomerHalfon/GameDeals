@@ -1,2 +1,5 @@
-<p>game-container works!</p>
-<button (click)='log()'>ssss</button>
+<div>
+    <img [src]='game?.thumb' class="img-thumbnail" alt="Responsive image">
+    <h1>{{game?.title}}:{{game?.gameID}}</h1>
+</div>
+<app-game-deals [deals]='game?.deals' (dealClicked)='goToDeal($event)'></app-game-deals>

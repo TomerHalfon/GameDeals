@@ -1,0 +1,20 @@
+<table class="table table-hover" *ngIf='deals'>
+    <thead>
+      <tr>
+        <th scope="col">Store</th>
+        <th scope="col">Price</th>
+        <th scope="col">Retail Price</th>
+        <th scope="col">Savings</th>
+      </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor='let deal of deals'>
+            <tr (click)='dealClick(deal.dealID)'>
+                <th scope="row">{{deal.store.storeName}}</th>
+                <td>{{deal.price}}</td>
+                <td>{{deal.retailPrice}}</td>
+                <td>{{deal.savings}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+  </table>
