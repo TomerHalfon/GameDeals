@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  api_url: 'https://www.cheapshark.com/api/1.0'
+  api_url: 'https://www.cheapshark.com/api/1.0',
+  gamerpower_url:'https://gamerpower.p.rapidapi.com/api',
+  x_rapidapi_key:'1fbeae25b3mshdd732a0dafcc83cp1617fdjsn7d5f16bb4331',
+  x_rapidapi_host: 'gamerpower.p.rapidapi.com'
 };
 
 /*
