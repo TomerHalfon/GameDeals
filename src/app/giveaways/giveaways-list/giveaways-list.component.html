@@ -1,0 +1,11 @@
+<div class="d-flex flex-wrap">
+    <div *ngFor='let give of giveaways' class="card" style="width: 18rem; height: 30rem;">
+        <img [src]='give.thumbnail' class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ give.title }}</h5>
+            <p class="card-text">{{ give.description }}</p>
+                    <p class="card-text"><small class="text-muted">{{ give.status }}</small></p>
+            <a [href]='give.open_giveaway_url' class="btn btn-primary">Go to giveaway</a>
+        </div>
+    </div>
+</div>

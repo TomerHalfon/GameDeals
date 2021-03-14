@@ -1,0 +1,19 @@
+<form [formGroup]='filtersForm' class=" form-inline" (ngSubmit)='onUpdateFilter()'>
+    <div class="form-group">
+        <select multiple formControlName='platforms' class="custom-select" >
+            <option *ngFor='let plat of platforms' [value]='plat'>{{plat}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select multiple formControlName='types' class="custom-select" >
+            <option *ngFor='let type of types' [value]='type'>{{type}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select multiple formControlName='sortBy' class="custom-select" >
+            <option *ngFor='let sort of sortBy' [value]='sort'>{{sort}}</option>
+        </select>
+    </div>
+    <button class="btn btn-primary">Filter</button>
+    <button type="button" class="btn btn-secondary" (click)='this.filtersForm.reset()'>Reset</button>
+</form>

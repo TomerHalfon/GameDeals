@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GiveawaysService } from 'src/app/services/giveaways.service';
-import { GiveawayType } from '../models/giveaway-type.enum';
-import { GiveawaysSortingOptions } from '../models/giveaways-sorting-options.enum';
+import { GiveawaysFilterOptions } from '../models/giveaways-filter.model';
 import { Giveaway } from '../models/giveway.model';
-import { Platforms } from '../models/platforms.enum';
 
 @Component({
   selector: 'app-giveaways-explorer-container',
@@ -13,12 +11,18 @@ import { Platforms } from '../models/platforms.enum';
 export class GiveawaysExplorerContainerComponent implements OnInit {
 
   giveaways:Giveaway[]
+  filters:GiveawaysFilterOptions
   constructor(private giveawaysService:GiveawaysService) { }
 
   ngOnInit(): void {
-    this.giveawaysService.getLive({platforms:[Platforms.pc,Platforms['epic-games-store']],types:[GiveawayType.game], sortBy:[GiveawaysSortingOptions.popularity]}).subscribe(data=>this.giveaways = data)
+    this.loadGiveaways()
   }
-log(){
-  console.log(this.giveaways)
+onFilterUpdated(newFilter:GiveawaysFilterOptions){
+  this.filters = newFilter
+  this.loadGiveaways()
+}
+loadGiveaways(){
+  this.giveawaysService.getLive(this.filters).subscribe(data=>this.giveaways = data)
+
 }
 }

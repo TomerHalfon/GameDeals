@@ -1,11 +1,10 @@
 import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
-import { concatMap, map, mergeMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
 import { Deal } from '../games/Models/deal.model';
 import { ExtendedGame } from '../games/Models/extendedGame.model';
 import { Game } from '../games/Models/game.model';
-import { Store } from '../games/Models/store.model';
 import { BaseApiService } from './base-api.service';
 import { StoresService } from './stores.service';
 
@@ -15,7 +14,6 @@ import { StoresService } from './stores.service';
 export class GamesService {
   constructor(private apiService: BaseApiService, private storesService: StoresService) { 
   }
-  private stores:Store[]
   getList(title: string): Observable<Game[]> {
     let params = { title: title }
     return this.apiService.get('games', new HttpParams({ fromObject: params })).pipe(map(data => <Game[]>(data)))
